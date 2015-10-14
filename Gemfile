@@ -11,6 +11,7 @@ gem 'turbolinks', '2.5.2'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
 gem 'octopress', '~> 3.0.0.rc'
+gem 'pg'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -30,11 +31,6 @@ gem 'bootstrap-sass', '3.3.1.0'
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
   gem 'figaro', '1.0.0'
-end
-
-# SQLite 3
-group :development, :test do
-  gem 'pg'
 end
 
 # Devise: https://github.com/plataformatec/devise
