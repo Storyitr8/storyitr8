@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.2'
 
 # Standard Rails gems
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.4'
 gem 'sass-rails', '4.0.4'
 gem 'uglifier', '2.5.3'
 gem 'coffee-rails', '4.1.0'
@@ -10,6 +10,7 @@ gem 'jquery-rails', '3.1.2'
 gem 'turbolinks', '2.5.2'
 gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
+gem 'octopress', '~> 3.0.0.rc'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -33,7 +34,7 @@ end
 
 # SQLite 3
 group :development, :test do
-  gem 'sqlite3', '1.3.10'
+  gem 'pg'
 end
 
 # Devise: https://github.com/plataformatec/devise
@@ -48,17 +49,13 @@ gem 'omniauth-github'
 # Redcarpet: https://github.com/vmg/redcarpet
 gem 'redcarpet', '3.2.0'
 
-# Rails 12factor for Heroku: https://github.com/heroku/rails_12factor
-group :production do
-  gem 'rails_12factor'
-end
-
-# PostgreSQL gem for Heroku
-group :production do
-  gem 'pg'
-end
-
 # Unicorn: http://unicorn.bogomips.org
 group :production do
   gem 'unicorn'
+  gem 'rails_12factor'
+end
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end

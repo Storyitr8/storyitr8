@@ -1,12 +1,15 @@
-# SQLite version 3.x
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
-production:
-  adapter: postgreql
+test:
+  adapter: postgresql
   encoding: unicode
+  database: storyitr8_test
+  pool: 5
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: storyitr8_test_development
+  pool: 5
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: storyitr8_production
   pool: 5
