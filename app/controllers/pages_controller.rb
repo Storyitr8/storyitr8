@@ -1,30 +1,21 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, only: [
-    :inside
-  ]
+  before_action :authenticate_user!, only: [:inside]
 
   def home
   end
-  
+
   def inside
   end
-  
-def posts
-    @posts = Post.published.page(params[:page]).per(10)
+
+  def posts
+    redirect_to "http://blog.storyitr8.com"
   end
-  
-  def show_post
-    @post = Post.friendly.find(params[:id])
-  rescue
-    redirect_to root_path
-  end
- 
-  
+
   def email
     @name = params[:name]
     @email = params[:email]
     @message = params[:message]
-    
+
     if @name.blank?
       flash[:alert] = "Please enter your name before sending your message. Thank you."
       render :contact
@@ -37,10 +28,10 @@ def posts
     elsif @message.scan(/<a href=/).size > 0 || @message.scan(/\[url=/).size > 0 || @message.scan(/\[link=/).size > 0 || @message.scan(/http:\/\//).size > 0
       flash[:alert] = "You can't send links. Thank you for your understanding."
       render :contact
-    else    
+    else
       ContactMailer.contact_message(@name,@email,@message).deliver
       redirect_to root_path, notice: "Your message was sent. Thank you."
     end
   end
-  
+
 end
