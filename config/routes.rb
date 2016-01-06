@@ -4,6 +4,7 @@ Storyitr8::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   get "/contact", to: "pages#contact", as: "contact"
   post "/emailconfirmation", to: "pages#email", as: "email_confirmation"
+  post 'visitors/contact', to: 'visitors#contact'
 
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
@@ -17,5 +18,8 @@ Storyitr8::Application.routes.draw do
     get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
     resources :posts
   end
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 
 end

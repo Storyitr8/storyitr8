@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.3.0'
 
 # Standard Rails gems
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.5'
 gem 'sass-rails', '4.0.4'
 gem 'uglifier', '2.5.3'
 gem 'coffee-rails', '4.1.0'
@@ -12,6 +12,7 @@ gem 'jbuilder', '2.2.5'
 gem 'bcrypt', '3.1.9'
 gem 'octopress', '~> 3.0.0.rc'
 gem 'pg'
+gem 'sidekiq'
 
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
@@ -31,6 +32,9 @@ gem 'bootstrap-sass', '3.3.1.0'
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
   gem 'figaro', '1.0.0'
+  gem 'letter_opener'
+  gem 'launchy'
+  gem 'sinatra', '>= 1.3.0', :require => nil
 end
 
 # Devise: https://github.com/plataformatec/devise
