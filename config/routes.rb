@@ -19,7 +19,4 @@ Storyitr8::Application.routes.draw do
     resources :posts
   end
 
-  require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
-
 end

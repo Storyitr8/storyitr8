@@ -109,8 +109,6 @@ GEM
     kramdown (1.9.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    letter_opener (1.4.1)
-      launchy (~> 2.2)
     liquid (3.0.6)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
@@ -175,8 +173,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -249,10 +245,6 @@ GEM
       connection_pool (~> 2.2, >= 2.2.0)
       json (~> 1.0)
       redis (~> 3.2, >= 3.2.1)
-    sinatra (1.4.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -296,7 +288,6 @@ DEPENDENCIES
   jquery-rails (= 3.1.2)
   kaminari (= 0.16.1)
   launchy
-  letter_opener
   octopress (~> 3.0.0.rc)
   omniauth
   omniauth-facebook
@@ -312,9 +303,7 @@ DEPENDENCIES
   sass-rails (= 4.0.4)
   shoulda-matchers
   sidekiq
-  sinatra (>= 1.3.0)
   turbolinks (= 2.5.2)
-  tzinfo-data
   uglifier (= 2.5.3)
   unicorn
 

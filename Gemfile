@@ -14,9 +14,6 @@ gem 'octopress', '~> 3.0.0.rc'
 gem 'pg'
 gem 'sidekiq'
 
-# Necessary for Windows OS (won't install on *nix systems)
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
 # Kaminari: https://github.com/amatsuda/kaminari
 gem 'kaminari', '0.16.1'
 
@@ -32,9 +29,7 @@ gem 'bootstrap-sass', '3.3.1.0'
 # Figaro: https://github.com/laserlemon/figaro
 group :development, :test do
   gem 'figaro', '1.0.0'
-  gem 'letter_opener'
   gem 'launchy'
-  gem 'sinatra', '>= 1.3.0', :require => nil
 end
 
 # Devise: https://github.com/plataformatec/devise
